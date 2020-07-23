@@ -44,6 +44,9 @@ class UserNameWidget extends StatelessWidget {
         );
       },
       child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(100)),
+        ),
         color: Color(0x1F2ED85F),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),

@@ -68,9 +68,9 @@ class _SenderTransferScreenState extends State<SenderTransferScreen> {
           return Scaffold(
             body: ListView.builder(
               itemCount: getP<Transfer>().transferElements.length,
-              itemBuilder: (context, i) {
+              itemBuilder: (context, index) {
                 return TransferElementTile(
-                    getP<Transfer>().transferElements[i]);
+                    getP<Transfer>().transferElements[index]);
               },
             ),
           );

@@ -8,6 +8,7 @@ import 'package:nearby_connections/nearby_connections.dart';
 import 'package:provider/provider.dart';
 import 'package:file_picker/file_picker.dart';
 import 'buttons.dart';
+import 'fileListTile.dart';
 
 class SendScreen extends StatefulWidget {
   @override
@@ -65,59 +66,87 @@ class _SendScreenState extends State<SendScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 20),
-          child: GestureDetector(
-            child: Image(
-              image: AssetImage('assets/logo.png'),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: GestureDetector(
+              child: Image(
+                image: AssetImage('assets/logo.png'),
+              ),
             ),
           ),
         ),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Consumer<Files>(
-              builder: (_, files, __) {
-                return Text("${files.files.length} files selected");
-              },
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xFFA4DE00),
-        child: Icon(
-          Icons.add,
-          size: 30,
-        ),
-        onPressed: () async {
-          getP<Files>().add(await FilePicker.getMultiFile());
-        },
-      ),
-      bottomNavigationBar: Consumer<Files>(
-        builder: (_, files, __) {
-          return SendButton(
-            color: Color(0xFF2BCF6C),
-            text: Text(
-              "Send",
-              style: TextStyle(fontSize: 17, color: Colors.black),
-            ),
-            icon: Icon(
-              Icons.send,
-              color: Colors.black,
-            ),
-            onPressed: files.files.length < 1
-                ? null
-                : () {
-                    //open list of advertisers to send files to..
-                    showAdvertisersDialog();
+        body: SizedBox(
+          height: 1000,
+          child: Consumer<Files>(
+            builder: (context, files, child) {
+              if (files.files.length == 0) {
+                return Center(
+                  child: Text("No files selected"),
+                );
+              } else
+                return ListView.builder(
+                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                  itemCount: files.files.length,
+                  itemBuilder: (context, index) {
+                    return FileTile(
+                        task: files.files[index].path.split('/').last);
                   },
-          );
-        },
+                );
+//				  Text("${files.files.length} files selected");
+            },
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Color(0xFFA4DE00),
+          child: Icon(
+            Icons.add,
+            size: 30,
+          ),
+          onPressed: () async {
+            getP<Files>().add(await FilePicker.getMultiFile());
+          },
+        ),
+        bottomNavigationBar: Consumer<Files>(
+          builder: (_, files, __) {
+            return SendButton(
+              color: Color(0xFF2BCF6C),
+              text: Text(
+                "Send",
+                style: TextStyle(fontSize: 17, color: Colors.black),
+              ),
+              icon: Icon(
+                Icons.send,
+                color: Colors.black,
+              ),
+              onPressed: files.files.length < 1
+                  ? null
+                  : () {
+                      //open list of advertisers to send files to..
+                      showAdvertisersDialog();
+                    },
+            );
+          },
+        ),
+//          child: SizedBox(
+//            height: 100,
+//            child: Consumer<Files>(
+//              builder: (context, files, child) {
+//                return ListView.builder(
+//                  itemCount: files.files.length,
+//                  scrollDirection: Axis.vertical,
+//                  itemBuilder: (context, index) {
+//                    return FileTile(
+//                      task: files.files[index].path,
+//                    );
+//                  },
+//                );
+////				  Text("${files.files.length} files selected");
+//              },
+//            ),
+//          ),
       ),
     );
   }
