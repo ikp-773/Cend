@@ -82,8 +82,7 @@ class _SendScreenState extends State<SendScreen> {
           children: <Widget>[
             Consumer<Files>(
               builder: (_, files, __) {
-                return
-                  Text("${files.files.length} files selected");
+                return Text("${files.files.length} files selected");
               },
             ),
           ],
