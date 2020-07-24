@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'helper.dart';
-import 'user.dart';
-import 'global.dart';
+import '../helper.dart';
+import '../user.dart';
+import '../global.dart';
 import 'package:nearby_connections/nearby_connections.dart';
-import 'buttons.dart';
+import '../buttons.dart';
+import 'package:fancy_dialog/fancy_dialog.dart';
+import '../appBar.dart';
 
 class ReceiveScreen extends StatefulWidget {
   @override
@@ -103,15 +105,8 @@ class _ReceiveScreenState extends State<ReceiveScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 20),
-          child: GestureDetector(
-            child: Image(
-              image: AssetImage('assets/logo.png'),
-            ),
-          ),
-        ),
+      appBar: CustomAppBar(
+        appBar: AppBar(),
       ),
       body: Center(
         child: Column(

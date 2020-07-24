@@ -1,24 +1,16 @@
 import 'package:flutter/material.dart';
-import 'transfer.dart';
-import 'global.dart';
-import 'elementTile.dart';
+import '../transfer.dart';
+import '../global.dart';
+import '../elementTile.dart';
 import 'package:provider/provider.dart';
+import '../appBar.dart';
 
 class ReceiverTransferScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          leading: Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: GestureDetector(
-              child: Image(
-                image: AssetImage('assets/logo.png'),
-              ),
-            ),
-          ),
-        ),
+        appBar: CustomAppBar(),
         body: Consumer<Transfer>(
           builder: (_, transfer, __) {
             if (transfer.transferElements.length < 1) {

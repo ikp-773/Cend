@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'helper.dart';
-import 'endpoints.dart';
-import 'files.dart';
-import 'user.dart';
-import 'global.dart';
+import '../helper.dart';
+import '../endpoints.dart';
+import '../files.dart';
+import '../user.dart';
+import '../global.dart';
 import 'package:nearby_connections/nearby_connections.dart';
 import 'package:provider/provider.dart';
 import 'package:file_picker/file_picker.dart';
-import 'buttons.dart';
-import 'fileListTile.dart';
+import '../buttons.dart';
+import '../appBar.dart';
+import '../fileListTile.dart';
+import 'package:rich_alert/rich_alert.dart';
 
 class SendScreen extends StatefulWidget {
   @override
@@ -41,26 +43,16 @@ class _SendScreenState extends State<SendScreen> {
         getP<Endpoints>().removeUser(id);
       }, serviceId: serviceId);
     } catch (e) {
-      // platform exceptions like unable to start bluetooth or insufficient permissions
       showDialog(
-        barrierDismissible: false,
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text("Some Error occurred :("),
-            content: Text(e.toString()),
-            actions: <Widget>[
-              RaisedButton(
-                child: Text("Go back"),
-                onPressed: () {
-                  Router.navigator.pop();
-                  Router.navigator.pop();
-                },
-              )
-            ],
-          );
-        },
-      );
+          context: context,
+          builder: (BuildContext context) {
+            return RichAlertDialog(
+              //uses the custom alert dialog
+              alertTitle: richTitle("Insufficient Permission"),
+              alertSubtitle: richSubtitle(e.toString()),
+              alertType: RichAlertType.WARNING,
+            );
+          });
     }
   }
 
@@ -68,15 +60,8 @@ class _SendScreenState extends State<SendScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          leading: Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: GestureDetector(
-              child: Image(
-                image: AssetImage('assets/logo.png'),
-              ),
-            ),
-          ),
+        appBar: CustomAppBar(
+          appBar: AppBar(),
         ),
         body: SizedBox(
           height: 1000,
@@ -95,7 +80,6 @@ class _SendScreenState extends State<SendScreen> {
                         task: files.files[index].path.split('/').last);
                   },
                 );
-//				  Text("${files.files.length} files selected");
             },
           ),
         ),
@@ -130,23 +114,6 @@ class _SendScreenState extends State<SendScreen> {
             );
           },
         ),
-//          child: SizedBox(
-//            height: 100,
-//            child: Consumer<Files>(
-//              builder: (context, files, child) {
-//                return ListView.builder(
-//                  itemCount: files.files.length,
-//                  scrollDirection: Axis.vertical,
-//                  itemBuilder: (context, index) {
-//                    return FileTile(
-//                      task: files.files[index].path,
-//                    );
-//                  },
-//                );
-////				  Text("${files.files.length} files selected");
-//              },
-//            ),
-//          ),
       ),
     );
   }

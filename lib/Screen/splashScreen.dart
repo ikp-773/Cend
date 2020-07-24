@@ -1,8 +1,8 @@
 import 'dart:math' show Random, pi;
 import 'package:circular_reveal_animation/circular_reveal_animation.dart';
 import 'package:flutter/material.dart';
-import 'global.dart';
-import 'user.dart';
+import '../global.dart';
+import '../user.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

@@ -1,9 +1,9 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'global.dart';
-import 'files.dart';
-import 'transfer.dart';
-import 'elementTile.dart';
+import '../global.dart';
+import '../files.dart';
+import '../transfer.dart';
+import '../elementTile.dart';
 import 'package:nearby_connections/nearby_connections.dart';
 import 'package:provider/provider.dart';
 

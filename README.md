@@ -1,4 +1,4 @@
 # Cend
 
-An application to share data via wifi.
+An application to share files offline via wifi.
 

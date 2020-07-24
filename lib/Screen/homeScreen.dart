@@ -1,25 +1,19 @@
 import 'package:flutter/material.dart';
-import 'global.dart';
+import '../global.dart';
 import 'package:nearby_connections/nearby_connections.dart';
-import 'buttons.dart';
-import 'usernameCard.dart';
+import '../buttons.dart';
+import '../usernameCard.dart';
 import 'package:provider/provider.dart';
 import 'avatarScreen.dart';
-import 'avatar.dart';
+import '../avatar.dart';
+import '../appBar.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 20),
-          child: GestureDetector(
-            child: Image(
-              image: AssetImage('assets/logo.png'),
-            ),
-          ),
-        ),
+      appBar: CustomAppBar(
+        appBar: AppBar(),
       ),
       body: Center(
         child: Padding(

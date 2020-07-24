@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'avatar.dart';
+import '../avatar.dart';
 
 class AvatarChooser extends StatelessWidget {
   @override

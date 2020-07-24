@@ -1,4 +1,4 @@
-//import 'dart:math';
+import 'dark.dart';
 import 'package:cend/avatar.dart';
 import 'package:flutter/material.dart';
 import 'endpoints.dart';
@@ -30,13 +30,18 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(
           value: Transfer(),
         ),
+        ChangeNotifierProvider.value(
+          value: Dark(false),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Cend',
-        theme: ThemeData.dark().copyWith(
-          primaryColor: Color(0xFF2BCF6C),
-        ),
+        theme: Provider.of<Dark>(context).dark
+            ? ThemeData.dark().copyWith(
+                primaryColor: Color(0xFF2BCF6C),
+              )
+            : ThemeData.light(),
         navigatorKey: Router.navKey,
         initialRoute: Router.splash,
         onGenerateRoute: Router.routes,
