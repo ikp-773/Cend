@@ -41,18 +41,22 @@ class _ReceiveScreenState extends State<ReceiveScreen> {
               context: context,
               builder: (context) {
                 return AlertDialog(
-                  backgroundColor: Colors.black38,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
+                  backgroundColor: Colors.black,
                   title: Text("${info.endpointName} wants to share files"),
                   actions: <Widget>[
                     ReceiveButton(
-                      color: Color(0xFF4C992B),
                       text: Text("Deny"),
+                      color: Colors.white12,
                       onPressed: () {
                         Router.navigator.pop();
                       },
                     ),
                     ReceiveButton(
                       text: Text("Allow"),
+                      color: Color(0xFF4C992B),
                       onPressed: () {
                         Nearby().acceptConnection(id,
                             onPayLoadRecieved:
@@ -85,10 +89,15 @@ class _ReceiveScreenState extends State<ReceiveScreen> {
         context: context,
         builder: (context) {
           return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+            ),
+            backgroundColor: Colors.black,
             title: Text("Some Error occurred :("),
             content: Text(e.toString()),
             actions: <Widget>[
               ReceiveButton(
+                color: Color(0xFF4C992B),
                 text: Text("Go back"),
                 onPressed: () {
                   Router.navigator.pop();

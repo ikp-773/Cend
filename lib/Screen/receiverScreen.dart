@@ -10,7 +10,9 @@ class ReceiverTransferScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: CustomAppBar(),
+        appBar: CustomAppBar(
+          appBar: AppBar(),
+        ),
         body: Consumer<Transfer>(
           builder: (_, transfer, __) {
             if (transfer.transferElements.length < 1) {
@@ -18,10 +20,12 @@ class ReceiverTransferScreen extends StatelessWidget {
             } else {
               return Scaffold(
                 body: ListView.builder(
+                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   itemCount: getP<Transfer>().transferElements.length,
                   itemBuilder: (context, i) {
                     return TransferElementTile(
-                        getP<Transfer>().transferElements[i]);
+                      getP<Transfer>().transferElements[i],
+                    );
                   },
                 ),
               );

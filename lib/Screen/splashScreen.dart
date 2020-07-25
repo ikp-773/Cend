@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 700),
+      duration: Duration(seconds: 2),
     );
     animation = CurvedAnimation(
       parent: animationController,
@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: CircularRevealAnimation(
         animation: animation,
         centerAlignment: Alignment.center,
@@ -54,9 +54,8 @@ class _SplashScreenState extends State<SplashScreen>
               endAngle: 2 * pi,
               transform: GradientRotation(-pi / 5),
               colors: <Color>[
-                Colors.lightGreenAccent[700],
-                Colors.lightGreen[600],
-                Colors.green[300],
+                Colors.black,
+                Colors.black,
               ],
             ),
           ),
@@ -64,22 +63,7 @@ class _SplashScreenState extends State<SplashScreen>
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Text(
-                  "Cend",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    shadows: [
-                      Shadow(
-                        offset: Offset(2.0, 2.0),
-                        blurRadius: 3.0,
-                        color: Colors.black,
-                      ),
-                    ],
-                    fontFamily: 'DancingScript',
-                    color: Colors.black,
-                    fontSize: 100,
-                  ),
-                ),
+                Image.asset('assets/splashScreen/cendLogo.png'),
               ],
             ),
           ),

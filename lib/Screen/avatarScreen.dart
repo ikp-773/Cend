@@ -22,24 +22,24 @@ class AvatarChooser extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  UserAvatar(avatarNew: 'assets/Boy1.png'),
+                  UserAvatar(avatarNew: 'assets/avatar/Boy1.png'),
                   SizedBox(
                     width: 10,
                   ),
-                  UserAvatar(avatarNew: 'assets/Girl1.png'),
+                  UserAvatar(avatarNew: 'assets/avatar/Girl1.png'),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   UserAvatar(
-                    avatarNew: 'assets/Girl2.png',
+                    avatarNew: 'assets/avatar/Girl2.png',
                   ),
                   SizedBox(
                     width: 10,
                   ),
                   UserAvatar(
-                    avatarNew: 'assets/Boy2.png',
+                    avatarNew: 'assets/avatar/Boy2.png',
                   )
                 ],
               ),

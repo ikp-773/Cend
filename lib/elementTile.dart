@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'transfer.dart';
 
@@ -35,11 +36,15 @@ class _TransferElementTileState extends State<TransferElementTile> {
         ),
         margin: const EdgeInsets.all(8.0),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Row(
               children: <Widget>[
                 Text(widget.element.name),
+                Flexible(
+                  child: SizedBox(
+                    width: 20,
+                  ),
+                ),
                 Icon(widget.element.progress == 0
                     ? Icons.check_box_outline_blank
                     : widget.element.progress < 1

@@ -19,6 +19,7 @@ dependencies:
   file_picker: ^1.13.0
   nearby_connections: ^1.1.1+1
   fancy_dialog: ^1.0.3
+  animated_splash_screen: ^1.0.0+1
   rich_alert: ^0.1.32
 
 dev_dependencies:
@@ -28,4 +29,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/
+    - assets/avatar/
+    - assets/appBar/
+    - assets/splashScreen/
+
