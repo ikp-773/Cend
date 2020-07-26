@@ -1,7 +1,7 @@
-### Development Phase
+# Development Phase
 
 
-# Statement of Goals
+## Statement of Goals
 
 Cend is intended to be a cross-platform application that facilitates file transfer without the use of mobile data. It also provides a chat room to people nearby without any charges. 
 
@@ -19,7 +19,7 @@ So currently the market requires a good file-sharing application thus I came acr
 
 
  
-# Functional Description
+## Functional Description
 
 Basic functionalities (current version) of Cend only include the transfer of all kind of files over a wireless network at a limited speed for Android users.
 
@@ -30,21 +30,17 @@ The connections won’t break easily if location services are turned ON on both 
 The files transfer happens over wifi, BlueTooth or hotspot after analysing the transfer speed. 
 
 The application uses several flutter packages. Some of the important ones that work as a backend of the app currently are: 
-
-nearby_connections 
+- nearby_connections 
  	- https://github.com/mannprerak2/nearby_connections
-
-provider
+- provider
 	- https://github.com/rrousselGit/provider
-
-shared_preferences
+- shared_preferences
 	- https://github.com/flutter/plugins
-
-file_picker
+- file_picker
 	- https://github.com/miguelpruivo/plugins_flutter_file_picker
 
  
-# Milestones
+## Milestones
 
 Now the application is only designed for android. Need to make it cross-platform for iOS users.
 
