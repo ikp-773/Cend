@@ -1,4 +1,4 @@
-import 'package:cend/avatar.dart';
+import 'avatar.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'endpoints.dart';
@@ -42,6 +42,7 @@ class MyApp extends StatelessWidget {
         title: 'Cend',
         theme: ThemeData.dark().copyWith(
           primaryColor: Color(0xFF2BCF6C),
+          accentColor: Colors.lightGreenAccent,
         ),
         navigatorKey: Router.navKey,
         initialRoute: Router.splash,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'user.dart';
 import 'package:provider/provider.dart';
 import 'global.dart';
+import 'buttons.dart';
 
 class UserNameWidget extends StatelessWidget {
   @override
@@ -14,7 +15,17 @@ class UserNameWidget extends StatelessWidget {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text("Set NickName"),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+              ),
+              title: Text(
+                "Set NickName",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green,
+                ),
+                textAlign: TextAlign.center,
+              ),
               content: TextField(
                 controller: textController,
                 decoration: InputDecoration(
@@ -24,8 +35,9 @@ class UserNameWidget extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               actions: <Widget>[
-                RaisedButton(
-                  child: Text(
+                ReceiveButton(
+                  color: Colors.green,
+                  text: Text(
                     "Set",
                     style: TextStyle(color: Colors.white),
                   ),
@@ -34,7 +46,7 @@ class UserNameWidget extends StatelessWidget {
                       getP<User>().nickName = textController.text.trim();
                       Prefs.preferences.setString(
                           Prefs.nickName, textController.text.trim());
-                      Router.navigator.pop(); // pop alertdialog
+                      Router.navigator.pop();
                     }
                   },
                 )

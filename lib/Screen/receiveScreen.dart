@@ -4,7 +4,6 @@ import '../user.dart';
 import '../global.dart';
 import 'package:nearby_connections/nearby_connections.dart';
 import '../buttons.dart';
-import 'package:fancy_dialog/fancy_dialog.dart';
 import '../appBar.dart';
 
 class ReceiveScreen extends StatefulWidget {

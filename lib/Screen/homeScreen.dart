@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
             bottom: 70,
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Flexible(
                 child: GestureDetector(
@@ -57,30 +57,29 @@ class HomeScreen extends StatelessWidget {
                 height: 15,
               ),
               UserNameWidget(),
-              Flexible(
-                  child: SizedBox(
-                height: 1500,
-              )),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  RoundedButton(
-                    color: Color(0xFF2BCF6C),
-                    text: "Send",
-                    onPressed: onClickSend,
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  RoundedButton(
-                    color: Color(0xFF9AF11F),
-                    text: "Receive",
-                    onPressed: onClickReceive,
-                  ),
-                ],
-              ),
             ],
           ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 200,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RoundedButton(
+              color: Color(0xFF2BCF6C),
+              text: "Send",
+              onPressed: onClickSend,
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            RoundedButton(
+              color: Color(0xFF9AF11F),
+              text: "Receive",
+              onPressed: onClickReceive,
+            ),
+          ],
         ),
       ),
     );

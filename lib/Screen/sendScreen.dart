@@ -10,7 +10,6 @@ import 'package:file_picker/file_picker.dart';
 import '../buttons.dart';
 import '../appBar.dart';
 import '../fileListTile.dart';
-import 'package:rich_alert/rich_alert.dart';
 
 class SendScreen extends StatefulWidget {
   @override
@@ -46,11 +45,35 @@ class _SendScreenState extends State<SendScreen> {
       showDialog(
           context: context,
           builder: (BuildContext context) {
-            return RichAlertDialog(
-              //uses the custom alert dialog
-              alertTitle: richTitle("Insufficient Permission"),
-              alertSubtitle: richSubtitle(e.toString()),
-              alertType: RichAlertType.WARNING,
+            return AlertDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+              ),
+              title: Text(
+                "Insufficient Permission",
+                style:
+                    TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+              titlePadding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              content: Text(
+                e.toString(),
+                style: TextStyle(color: Colors.white),
+              ),
+              actions: <Widget>[
+                RaisedButton(
+                  elevation: 5,
+                  color: Colors.green,
+                  child: Text(
+                    "OK",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    Router.navigator.pop();
+                    Router.navigator.pop();
+                  },
+                ),
+              ],
             );
           });
     }
@@ -123,7 +146,14 @@ class _SendScreenState extends State<SendScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text("Receivers Near You"),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(25)),
+          ),
+          title: Text(
+            "Receivers Near You",
+            style: TextStyle(color: Colors.green),
+            textAlign: TextAlign.center,
+          ),
           content: Container(
             width: double.maxFinite,
             child: Center(
@@ -163,7 +193,13 @@ class _EndpointListViewState extends State<EndpointListView> {
         return Padding(
           padding: EdgeInsets.all(6),
           child: FlatButton(
-            child: Text("${widget.endpoints.externalUsers[i].nickName}"),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(15)),
+            ),
+            child: Text(
+              "${widget.endpoints.externalUsers[i].nickName}",
+              style: TextStyle(color: Colors.white),
+            ),
             onPressed: () {
               // request connection to advertiser
               requestConnection(i, context);

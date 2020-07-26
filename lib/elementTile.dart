@@ -31,32 +31,39 @@ class _TransferElementTileState extends State<TransferElementTile> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 6),
       child: Card(
+        color: Colors.white12,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(15)),
         ),
         margin: const EdgeInsets.all(8.0),
-        child: Column(
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Text(widget.element.name),
-                Flexible(
-                  child: SizedBox(
-                    width: 20,
+        child: Padding(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Text(
+                    widget.element.name,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-                Icon(widget.element.progress == 0
-                    ? Icons.check_box_outline_blank
-                    : widget.element.progress < 1
-                        ? Icons.indeterminate_check_box
-                        : Icons.check_box)
-              ],
-            ),
-            LinearProgressIndicator(
-              backgroundColor: Colors.lightGreenAccent,
-              value: widget.element.progress,
-            ),
-          ],
+                  Flexible(
+                    child: SizedBox(
+                      width: 20,
+                    ),
+                  ),
+                  Icon(widget.element.progress == 0
+                      ? Icons.check_box_outline_blank
+                      : widget.element.progress < 1
+                          ? Icons.indeterminate_check_box
+                          : Icons.check_box)
+                ],
+              ),
+              LinearProgressIndicator(
+                backgroundColor: Colors.black,
+                value: widget.element.progress,
+              ),
+            ],
+          ),
         ),
       ),
     );
