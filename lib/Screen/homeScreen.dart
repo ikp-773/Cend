@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../global.dart';
+import '../Services/global.dart';
 import 'package:nearby_connections/nearby_connections.dart';
 import '../Widgets/buttons.dart';
-import '../usernameCard.dart';
+import '../Widgets/usernameCard.dart';
 import 'package:provider/provider.dart';
 import 'avatarScreen.dart';
 import '../Providers/avatar.dart';

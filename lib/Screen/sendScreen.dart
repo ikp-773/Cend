@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import '../helper.dart';
-import '../endpoints.dart';
-import '../files.dart';
-import '../user.dart';
-import '../global.dart';
+import '../Services/helper.dart';
+import '../Providers/endpoints.dart';
+import '../Providers/files.dart';
+import '../Providers/user.dart';
+import '../Services/global.dart';
 import 'package:nearby_connections/nearby_connections.dart';
 import 'package:provider/provider.dart';
 import 'package:file_picker/file_picker.dart';
 import '../Widgets/buttons.dart';
 import '../Widgets/appBar.dart';
-import '../fileListTile.dart';
+import '../Widgets/fileListTile.dart';
 
 class SendScreen extends StatefulWidget {
   @override

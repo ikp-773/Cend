@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'Screen/homeScreen.dart';
-import 'Screen/receiveScreen.dart';
-import 'Screen/receiverScreen.dart';
-import 'Screen/sendScreen.dart';
-import 'Screen/senderScreen.dart';
-import 'Screen/splashScreen.dart';
+import '../Screen/homeScreen.dart';
+import '../Screen/receiveScreen.dart';
+import '../Screen/receiverScreen.dart';
+import '../Screen/sendScreen.dart';
+import '../Screen/senderScreen.dart';
+import '../Screen/splashScreen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

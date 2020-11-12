@@ -1,11 +1,11 @@
 import 'Providers/avatar.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
-import 'endpoints.dart';
-import 'files.dart';
-import 'transfer.dart';
-import 'user.dart';
-import 'global.dart';
+import 'Providers/endpoints.dart';
+import 'Providers/files.dart';
+import 'Providers/transfer.dart';
+import 'Providers/user.dart';
+import 'Services/global.dart';
 import 'package:provider/provider.dart';
 
 void main() {

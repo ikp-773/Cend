@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'user.dart';
+import '../Providers/user.dart';
 import 'package:provider/provider.dart';
-import 'global.dart';
-import 'Widgets/buttons.dart';
+import '../Services/global.dart';
+import 'buttons.dart';
 
 class UserNameWidget extends StatelessWidget {
   @override

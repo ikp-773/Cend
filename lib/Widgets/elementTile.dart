@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'transfer.dart';
+import '../Providers/transfer.dart';
 
 class TransferElementTile extends StatefulWidget {
   final TransferElement element;

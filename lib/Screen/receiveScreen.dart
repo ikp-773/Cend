@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../helper.dart';
-import '../user.dart';
-import '../global.dart';
+import '../Services/helper.dart';
+import '../Providers/user.dart';
+import '../Services/global.dart';
 import 'package:nearby_connections/nearby_connections.dart';
 import '../Widgets/buttons.dart';
 import '../Widgets/appBar.dart';

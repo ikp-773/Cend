@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'transfer.dart';
+import '../Providers/transfer.dart';
 import 'package:nearby_connections/nearby_connections.dart';
 import 'global.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../transfer.dart';
-import '../global.dart';
-import '../elementTile.dart';
+import '../Providers/transfer.dart';
+import '../Services/global.dart';
+import '../Widgets/elementTile.dart';
 import 'package:provider/provider.dart';
 import '../Widgets/appBar.dart';
 
