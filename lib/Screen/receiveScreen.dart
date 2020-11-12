@@ -3,8 +3,8 @@ import '../helper.dart';
 import '../user.dart';
 import '../global.dart';
 import 'package:nearby_connections/nearby_connections.dart';
-import '../buttons.dart';
-import '../appBar.dart';
+import '../Widgets/buttons.dart';
+import '../Widgets/appBar.dart';
 
 class ReceiveScreen extends StatefulWidget {
   @override

@@ -1,4 +1,4 @@
-import 'avatar.dart';
+import 'Providers/avatar.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'endpoints.dart';

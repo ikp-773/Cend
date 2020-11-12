@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import '../global.dart';
 import 'package:nearby_connections/nearby_connections.dart';
-import '../buttons.dart';
+import '../Widgets/buttons.dart';
 import '../usernameCard.dart';
 import 'package:provider/provider.dart';
 import 'avatarScreen.dart';
-import '../avatar.dart';
-import '../appBar.dart';
+import '../Providers/avatar.dart';
+import '../Widgets/appBar.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

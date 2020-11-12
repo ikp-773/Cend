@@ -3,7 +3,7 @@ import '../transfer.dart';
 import '../global.dart';
 import '../elementTile.dart';
 import 'package:provider/provider.dart';
-import '../appBar.dart';
+import '../Widgets/appBar.dart';
 
 class ReceiverTransferScreen extends StatelessWidget {
   @override

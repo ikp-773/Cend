@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'user.dart';
 import 'package:provider/provider.dart';
 import 'global.dart';
-import 'buttons.dart';
+import 'Widgets/buttons.dart';
 
 class UserNameWidget extends StatelessWidget {
   @override

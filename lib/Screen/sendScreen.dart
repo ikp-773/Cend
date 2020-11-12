@@ -7,8 +7,8 @@ import '../global.dart';
 import 'package:nearby_connections/nearby_connections.dart';
 import 'package:provider/provider.dart';
 import 'package:file_picker/file_picker.dart';
-import '../buttons.dart';
-import '../appBar.dart';
+import '../Widgets/buttons.dart';
+import '../Widgets/appBar.dart';
 import '../fileListTile.dart';
 
 class SendScreen extends StatefulWidget {
