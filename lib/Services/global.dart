@@ -8,7 +8,7 @@ import '../Screen/splashScreen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Router {
+class RouteWay {
   /// starting screen
   static const splash = "/";
 
@@ -27,19 +27,19 @@ class Router {
 
   static Route<dynamic> routes(RouteSettings s) {
     switch (s.name) {
-      case Router.splash:
+      case RouteWay.splash:
         return MaterialPageRoute(builder: (_) => SplashScreen());
-      case Router.home:
+      case RouteWay.home:
         return MaterialPageRoute(builder: (_) => HomeScreen());
-      case Router.send:
+      case RouteWay.send:
         return MaterialPageRoute(builder: (_) => SendScreen());
-      case Router.receive:
+      case RouteWay.receive:
         return MaterialPageRoute(builder: (_) => ReceiveScreen());
-      case Router.senderTransfer:
+      case RouteWay.senderTransfer:
         assert(s.arguments != null && s.arguments is String);
         return MaterialPageRoute(
             builder: (_) => SenderTransferScreen(s.arguments as String));
-      case Router.receiverTransfer:
+      case RouteWay.receiverTransfer:
         return MaterialPageRoute(builder: (_) => ReceiverTransferScreen());
       default:
         return null;
@@ -60,7 +60,7 @@ class Prefs {
 
 /// get value from Providers without listening
 T getP<T>() {
-  return Provider.of<T>(Router.navigator.context, listen: false);
+  return Provider.of<T>(RouteWay.navigator.context, listen: false);
 }
 
 const serviceId = "com.pkmnapps.flutter_file_sharer";

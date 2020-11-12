@@ -44,9 +44,9 @@ class MyApp extends StatelessWidget {
           primaryColor: Color(0xFF2BCF6C),
           accentColor: Colors.lightGreenAccent,
         ),
-        navigatorKey: Router.navKey,
-        initialRoute: Router.splash,
-        onGenerateRoute: Router.routes,
+        navigatorKey: RouteWay.navKey,
+        initialRoute: RouteWay.splash,
+        onGenerateRoute: RouteWay.routes,
       ),
     );
   }

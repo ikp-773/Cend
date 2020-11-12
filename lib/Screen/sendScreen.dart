@@ -69,8 +69,8 @@ class _SendScreenState extends State<SendScreen> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
-                    Router.navigator.pop();
-                    Router.navigator.pop();
+                    RouteWay.navigator.pop();
+                    RouteWay.navigator.pop();
                   },
                 ),
               ],
@@ -227,8 +227,8 @@ class _EndpointListViewState extends State<EndpointListView> {
       onConnectionResult: (id, status) {
         //send files to user..
         if (status == Status.CONNECTED) {
-          Router.navigator
-              .pushReplacementNamed(Router.senderTransfer, arguments: id);
+          RouteWay.navigator
+              .pushReplacementNamed(RouteWay.senderTransfer, arguments: id);
         } else {
           Scaffold.of(context).showSnackBar(
             SnackBar(

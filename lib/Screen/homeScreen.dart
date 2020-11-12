@@ -87,13 +87,13 @@ class HomeScreen extends StatelessWidget {
 
   void onClickSend() async {
     if (await _checkAndAskPermissions()) {
-      Router.navigator.pushNamed(Router.send);
+      RouteWay.navigator.pushNamed(RouteWay.send);
     }
   }
 
   void onClickReceive() async {
     if (await _checkAndAskPermissions()) {
-      Router.navigator.pushNamed(Router.receive);
+      RouteWay.navigator.pushNamed(RouteWay.receive);
     }
   }
 

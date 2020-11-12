@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen>
     var pref = await Prefs.getPrefs();
     getP<User>().nickName = pref.getString(Prefs.nickName) ??
         "User_" + Random().nextInt(1000).toString();
-    Navigator.of(context).pushReplacementNamed(Router.home);
+    Navigator.of(context).pushReplacementNamed(RouteWay.home);
   }
 
   @override

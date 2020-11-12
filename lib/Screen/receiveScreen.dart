@@ -50,7 +50,7 @@ class _ReceiveScreenState extends State<ReceiveScreen> {
                       text: Text("Deny"),
                       color: Colors.white12,
                       onPressed: () {
-                        Router.navigator.pop();
+                        RouteWay.navigator.pop();
                       },
                     ),
                     ReceiveButton(
@@ -62,8 +62,8 @@ class _ReceiveScreenState extends State<ReceiveScreen> {
                                 PayloadHandler().onPayloadReceived,
                             onPayloadTransferUpdate: PayloadHandler()
                                 .onPayloadTransferUpdateReceiver);
-                        Router.navigator
-                            .pushReplacementNamed(Router.receiverTransfer);
+                        RouteWay.navigator
+                            .pushReplacementNamed(RouteWay.receiverTransfer);
                       },
                     ),
                   ],
@@ -99,8 +99,8 @@ class _ReceiveScreenState extends State<ReceiveScreen> {
                 color: Color(0xFF4C992B),
                 text: Text("Go back"),
                 onPressed: () {
-                  Router.navigator.pop();
-                  Router.navigator.pop();
+                  RouteWay.navigator.pop();
+                  RouteWay.navigator.pop();
                 },
               )
             ],

@@ -46,7 +46,7 @@ class UserNameWidget extends StatelessWidget {
                       getP<User>().nickName = textController.text.trim();
                       Prefs.preferences.setString(
                           Prefs.nickName, textController.text.trim());
-                      Router.navigator.pop();
+                      RouteWay.navigator.pop();
                     }
                   },
                 )
