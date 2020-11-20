@@ -22,9 +22,9 @@ class ReceiverTransferScreen extends StatelessWidget {
                 body: ListView.builder(
                   padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   itemCount: getP<Transfer>().transferElements.length,
-                  itemBuilder: (context, i) {
+                  itemBuilder: (context, index) {
                     return TransferElementTile(
-                      getP<Transfer>().transferElements[i],
+                      getP<Transfer>().transferElements[index],
                     );
                   },
                 ),
