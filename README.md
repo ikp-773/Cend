@@ -1,5 +1,5 @@
 # 📤Cend📲
-[![License: MIT](https://img.shields.io/badge/license-MIT-red.svg)](https://opensource.org/licenses/MIT) ![GitHub top language](https://img.shields.io/github/languages/top/ikp-773/custom_pin_entry_field)  ![Platform Support](https://img.shields.io/badge/platform-android-green) ![Forks](https://img.shields.io/github/forks/ikp-773/Cend?style=social)
+[![License: MIT](https://img.shields.io/badge/license-MIT-red.svg)](https://opensource.org/licenses/MIT) ![GitHub top language](https://img.shields.io/github/languages/top/ikp-773/custom_pin_entry_field) [![wakatime](https://wakatime.com/badge/github/ikp-773/Cend.svg)](https://wakatime.com/badge/github/ikp-773/Cend)  ![Platform Support](https://img.shields.io/badge/platform-android-green) ![Forks](https://img.shields.io/github/forks/ikp-773/Cend?style=social)
 
 Cend is a file transfer application for android through which file can be shared to android devices nearby without network.
 <img src="screenshots/3.png?raw=true" width=300 >
